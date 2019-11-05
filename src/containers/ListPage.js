@@ -41,22 +41,22 @@ export default class ListPage extends Component {
       if(state.page > 1) {
         return ({ page: state.page - 1 });
       }
-    });
-    setTimeout(() => {
+    }, () => {
       callApi(this.props.match.params.searchQuery, this.state.page)
         .then((characters) => {
           this.setState({ characters, loading: false });
-        });}, 100);
+        });
+    });
   }
 
   handleForwardPaging = () => {
     this.setState({ loading: true });
-    this.setState(state => ({ page: state.page + 1 }));
-    setTimeout(() => {
+    this.setState(state => ({ page: state.page + 1 }), () => {
       callApi(this.props.match.params.searchQuery, this.state.page)
         .then((characters) => {
           this.setState({ characters, loading: false });
-        });}, 100);
+        });
+    });
   }
 
 
