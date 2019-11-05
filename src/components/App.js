@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 import HomePage from '../containers/HomePage';
 import ListPage from '../containers/ListPage';
 import DetailPage from '../containers/DetailPage';
+import NotFound from '../components/NotFound';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/listpage/:searchQuery" component={ListPage} />
           <Route path="/listpage" component={ListPage} />
           <Route path="/detailpage/:id" component={DetailPage} />
+          <Route path="/" component={NotFound} />
         </Switch>
         <Footer />
       </>
