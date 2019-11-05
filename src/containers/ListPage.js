@@ -39,18 +39,20 @@ export default class ListPage extends Component {
         return ({ page: state.page - 1 });
       }
     });
-    callApi(this.props.match.params.searchQuery, this.state.page)
-      .then((characters) => {
-        this.setState({ characters });
-      });
+    setTimeout(() => {
+      callApi(this.props.match.params.searchQuery, this.state.page)
+        .then((characters) => {
+          this.setState({ characters });
+        });}, 100);
   }
 
   handleForwardPaging = () => {
     this.setState(state => ({ page: state.page + 1 }));
-    callApi(this.props.match.params.searchQuery, this.state.page)
-      .then((characters) => {
-        this.setState({ characters });
-      });
+    setTimeout(() => {
+      callApi(this.props.match.params.searchQuery, this.state.page)
+        .then((characters) => {
+          this.setState({ characters });
+        });}, 100);
   }
 
 
