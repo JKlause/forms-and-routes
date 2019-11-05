@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterListItem component renders CharacterListItem 1`] = `
+<div
+  onClick={[Function]}
+>
+  <img
+    src=""
+  />
+  <h2 />
+</div>
+`;

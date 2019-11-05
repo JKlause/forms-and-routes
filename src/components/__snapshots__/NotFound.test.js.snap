@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound component renders NotFound 1`] = `
+<h1>
+  This Page Is Not Found
+</h1>
+`;

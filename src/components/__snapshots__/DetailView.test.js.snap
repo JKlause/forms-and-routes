@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailView component renders DetailView 1`] = `
+<div>
+  <span>
+    Enemies: 
+  </span>
+  <span>
+    Allies: 
+  </span>
+</div>
+`;

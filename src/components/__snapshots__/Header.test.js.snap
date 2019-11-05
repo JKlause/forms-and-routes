@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders Header 1`] = `
+<header
+  className="Header"
+>
+  <h1>
+    The Last Airbender Character
+  </h1>
+  <nav>
+    <Link
+      to="/"
+    >
+      Home Page
+    </Link>
+    <Link
+      to="/listpage"
+    >
+      Character List
+    </Link>
+  </nav>
+</header>
+`;
