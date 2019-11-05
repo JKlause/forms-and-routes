@@ -34,7 +34,11 @@ export default class ListPage extends Component {
   }
 
   handleBackwardPaging = () => {
-    this.setState(state => ({ page: state.page - 1 }));
+    this.setState(state => {
+      if(state.page > 1) {
+        return ({ page: state.page - 1 });
+      }
+    });
     callApi(this.props.match.params.searchQuery, this.state.page)
       .then((characters) => {
         this.setState({ characters });
