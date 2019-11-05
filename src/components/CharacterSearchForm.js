@@ -1,5 +1,4 @@
 import React from 'react';
-// import styles from './Footer.css';
 import PropTypes from 'prop-types';
 
 const CharacterSearchForm = ({ handleSubmit, handleChange, searchQuery }) => {
