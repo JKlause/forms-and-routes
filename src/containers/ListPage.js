@@ -17,7 +17,6 @@ export default class ListPage extends Component {
 
   state = {
     characters: [],
-    searchQuery: '',
     page: 1
   }
 
@@ -35,11 +34,19 @@ export default class ListPage extends Component {
   }
 
   handleBackwardPaging = () => {
-
+    this.setState(state => ({ page: state.page - 1 }));
+    callApi(this.props.match.params.searchQuery, this.state.page)
+      .then((characters) => {
+        this.setState({ characters });
+      });
   }
 
   handleForwardPaging = () => {
-
+    this.setState(state => ({ page: state.page + 1 }));
+    callApi(this.props.match.params.searchQuery, this.state.page)
+      .then((characters) => {
+        this.setState({ characters });
+      });
   }
 
 
@@ -47,8 +54,8 @@ export default class ListPage extends Component {
     return (
       <>
         <div>
-          <button onClick={this.handleBackwardPaging}>Next Page</button>
-          <button onClick={this.handleForwardPaging}>Previous Page</button>
+          <button onClick={this.handleBackwardPaging}>Previous Page</button>
+          <button onClick={this.handleForwardPaging}>Next Page</button>
         </div>
         <div>
           <CharacterListDisplay characters={this.state.characters} handleCharacterClick={this.handleCharacterClick}/>

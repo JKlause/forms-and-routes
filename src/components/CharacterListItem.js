@@ -12,7 +12,7 @@ const CharacterListItem = ({ photoUrl, name, _id, handleCharacterClick }) => (
 CharacterListItem.propTypes = {
   photoUrl: PropTypes.string,
   name: PropTypes.string,
-  _id: PropTypes.string.isRequired,
+  _id: PropTypes.string,
   handleCharacterClick: PropTypes.func.isRequired
 };
 

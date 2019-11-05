@@ -1,6 +1,8 @@
 
 /* eslint-disable no-console */
 export const callApi = (searchQuery, page = 1) => { 
+console.log(page);
+  if(page < 1) page = 1;
 
   let query = searchQuery;
 
