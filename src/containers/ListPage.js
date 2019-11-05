@@ -17,14 +17,16 @@ export default class ListPage extends Component {
 
   state = {
     characters: [],
-    page: 1
+    page: 1,
+    loading: false,
   }
 
  
   componentDidMount() {
+    this.setState({ loading: true });
     callApi(this.props.match.params.searchQuery)
       .then((characters) => {
-        this.setState({ characters });
+        this.setState({ characters, loading: false });
       });
   }
 
@@ -34,6 +36,7 @@ export default class ListPage extends Component {
   }
 
   handleBackwardPaging = () => {
+    this.setState({ loading: true });
     this.setState(state => {
       if(state.page > 1) {
         return ({ page: state.page - 1 });
@@ -42,21 +45,23 @@ export default class ListPage extends Component {
     setTimeout(() => {
       callApi(this.props.match.params.searchQuery, this.state.page)
         .then((characters) => {
-          this.setState({ characters });
+          this.setState({ characters, loading: false });
         });}, 100);
   }
 
   handleForwardPaging = () => {
+    this.setState({ loading: true });
     this.setState(state => ({ page: state.page + 1 }));
     setTimeout(() => {
       callApi(this.props.match.params.searchQuery, this.state.page)
         .then((characters) => {
-          this.setState({ characters });
+          this.setState({ characters, loading: false });
         });}, 100);
   }
 
 
   render() {
+    if(this.state.loading) return <img src='https://media.giphy.com/media/w461tXo03sQP6/giphy.gif'></img>;
     return (
       <>
         <div>

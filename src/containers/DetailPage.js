@@ -17,18 +17,22 @@ export default class ListPage extends Component {
 
   state = {
     character: {},
+    loading: false
   }
 
  
   componentDidMount() {
+    this.setState({ loading: true });
     callApi(this.props.match.params.id)
       .then((character) => {
-        this.setState({ character });
+        this.setState({ character, loading: false });
       });
   }
 
 
   render() {
+    if(this.state.loading) return <img src='https://media.giphy.com/media/w461tXo03sQP6/giphy.gif'></img>;
+
     return (
       <>
         <DetailView {...this.state.character} />

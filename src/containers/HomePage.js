@@ -12,13 +12,15 @@ export default class HomePage extends Component {
   state = {
     photoUrl: '',
     name: '',
-    searchQuery: ''
+    searchQuery: '',
+    loading: false
   }
 
   componentDidMount() {
+    this.setState({ loading: true });
     callApi('random')
       .then(([{ photoUrl, name }]) => {
-        this.setState({ photoUrl, name });
+        this.setState({ photoUrl, name, loading: false });
       });
   }
 
@@ -28,9 +30,10 @@ export default class HomePage extends Component {
   }
 
   handleRandomGet = () => {
+    this.setState({ loading: true });
     callApi('random')
       .then(([{ photoUrl, name }]) => {
-        this.setState({ photoUrl, name });
+        this.setState({ photoUrl, name, loading: false });
       });
   }
 
@@ -39,6 +42,7 @@ export default class HomePage extends Component {
   }
 
   render() {
+    if(this.state.loading) return <img src='https://media.giphy.com/media/w461tXo03sQP6/giphy.gif'></img>;
 
     const randomImageProps = {
       photoUrl: this.state.photoUrl,
