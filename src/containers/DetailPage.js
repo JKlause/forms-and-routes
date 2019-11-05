@@ -3,7 +3,7 @@ import DetailView from '../components/DetailView';
 import { callApi } from '../service/callApi';
 import PropTypes from 'prop-types';
 
-export default class ListPage extends Component {
+export default class DetailPage extends Component {
 
 
   static propTypes = {
