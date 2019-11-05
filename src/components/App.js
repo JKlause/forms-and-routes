@@ -12,12 +12,15 @@ import ListPage from '../containers/ListPage';
 export default function App() {
   return (
     <Router>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/list-page" component={ListPage} />
-      </Switch>
-      <Footer/>
+      <>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/listpage/:searchQuery" component={ListPage} />
+          <Route path="/listpage" component={ListPage} />
+        </Switch>
+        <Footer />
+      </>
     </Router>
   );
 }

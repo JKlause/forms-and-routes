@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import RandomImage from '../components/RandomImage';
 import CharacterSearchForm from '../components/CharacterSearchForm';
 import { callApi } from '../service/callApi';
+import PropTypes from 'prop-types';
 
 export default class HomePage extends Component {
+  static propTypes = {
+    history: PropTypes.object.isRequired
+  }
 
   state = {
     photoUrl: '',
@@ -20,11 +24,7 @@ export default class HomePage extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-
-    callApi(this.state.searchQuery)
-      .then(([{ photoUrl, name }]) => {
-        this.setState({ photoUrl, name });
-      });
+    this.props.history.push(`/listpage/${this.state.searchQuery}`);
   }
 
   handleRandomGet = () => {

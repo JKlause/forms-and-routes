@@ -4,11 +4,18 @@ import PropTypes from 'prop-types';
 import CharacterListItem from './CharacterListItem';
 
 const CharacterListDisplay = ({ characters, handleCharacterClick }) => {
-  
-  const characterElements = characters.map((character, index) => {
-    <li key={`${index}-${character.photoUrl}`}>
-      <CharacterListItem handleCharacterClick={handleCharacterClick} {...character}/>
-    </li>
+
+  const characterElements = characters.map((character) => {
+
+    const characterObj = {
+      photoUrl: character.photoUrl,
+      name: character.name,
+      _id: character._id
+    };
+
+    return (<li key={character._id}>
+      <CharacterListItem handleCharacterClick={handleCharacterClick} {...characterObj}/>
+    </li>);
   });
   
   return (

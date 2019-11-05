@@ -10,9 +10,9 @@ const CharacterListItem = ({ photoUrl, name, _id, handleCharacterClick }) => (
 );
 
 CharacterListItem.propTypes = {
-  photoUrl: PropTypes.string,
-  name: PropTypes.string,
-  _id: PropTypes.string.isRequired,
+  photoUrl: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  _id: PropTypes.object.isRequired,
   handleCharacterClick: PropTypes.func.isRequired
 };
 
