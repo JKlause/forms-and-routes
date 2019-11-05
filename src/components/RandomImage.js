@@ -6,7 +6,7 @@ const RandomImage = ({ photoUrl, name, handleRandomGet }) => {
   return (
     <>
       <img src={photoUrl} />
-      <figcaption>{name}</figcaption>
+      <h2>{name}</h2>
       <button onClick={handleRandomGet}>Get New Random Character</button>
     </>
   );

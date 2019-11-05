@@ -8,6 +8,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import HomePage from '../containers/HomePage';
 import ListPage from '../containers/ListPage';
+import DetailPage from '../containers/DetailPage';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route exact path="/" component={HomePage} />
           <Route path="/listpage/:searchQuery" component={ListPage} />
           <Route path="/listpage" component={ListPage} />
+          <Route path="/detailpage/:id" component={DetailPage} />
         </Switch>
         <Footer />
       </>
