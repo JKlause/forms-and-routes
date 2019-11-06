@@ -13,4 +13,12 @@ describe('HomePage container', () => {
     const wrapper = shallow(<HomePage history={{}}/>);
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('handleRandomGet changes state.photoUrl and state.name', () => {
+ 
+  });
+
+  it('handleChange changes state of target', () => {
+    
+  });
 });
