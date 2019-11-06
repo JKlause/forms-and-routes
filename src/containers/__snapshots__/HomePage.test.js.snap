@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage container renders HomePage component 1`] = `
+<img
+  src="https://media.giphy.com/media/w461tXo03sQP6/giphy.gif"
+/>
+`;

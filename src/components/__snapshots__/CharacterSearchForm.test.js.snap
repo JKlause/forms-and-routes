@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterSearchForm component renders CharacterSearchForm 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    name="searchQuery"
+    onChange={[Function]}
+    placeholder="Search For A Character"
+    type="text"
+    value=""
+  />
+  <button>
+    Search
+  </button>
+</form>
+`;

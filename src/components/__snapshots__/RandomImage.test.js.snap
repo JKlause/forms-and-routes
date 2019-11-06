@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RandomImage component renders RandomImage 1`] = `
+<Fragment>
+  <img
+    src=""
+  />
+  <h2 />
+  <button
+    onClick={[Function]}
+  >
+    Get New Random Character
+  </button>
+</Fragment>
+`;

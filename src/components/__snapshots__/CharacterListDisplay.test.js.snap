@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterListDisplay component renders CharacterListDisplay 1`] = `
+<div>
+  <h1>
+    Characters
+  </h1>
+  <ul />
+</div>
+`;
